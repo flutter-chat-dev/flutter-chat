@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'texts.dart';
 
@@ -55,33 +56,38 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: titleBgColor,
         title: Text(widget.title),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.topRight,
-              child: DropdownButton<Locales>(
-                focusColor: bgColor,
-                items: Locales.values
-                    .map((l) =>
-                        DropdownMenuItem(value: l, child: Text(l.displayName)))
-                    .toList(),
-                onChanged: (l) => setState(() {
-                  _locale = l!;
-                }),
-                value: _locale,
-              ),
-            ),
-            Expanded(
-              child: SizedBox(
-                //width: 400,
-                child: Markdown(
-                  data: Texts.mainIntro.text[_locale]!,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            width: 700,
+            child: Column(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.topRight,
+                  child: DropdownButton<Locales>(
+                    focusColor: bgColor,
+                    items: Locales.values
+                        .map((l) => DropdownMenuItem(
+                            value: l, child: Text(l.displayName)))
+                        .toList(),
+                    onChanged: (l) => setState(() {
+                      _locale = l!;
+                    }),
+                    value: _locale,
+                  ),
                 ),
-              ),
+                Expanded(
+                  child: Markdown(
+                    data: Texts.mainIntro.text[_locale]!,
+                    onTapLink: (text, url, title) async {
+                      if (url != null) await launchUrl(Uri.parse(url));
+                    },
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

@@ -8,15 +8,19 @@ enum Locales {
   final String displayName;
 }
 
+const _linkToFlutter = "http://flutter.dev";
+const _linkToGroup = "https://www.facebook.com/groups/676660377543846/";
+
 enum Texts {
   mainIntro({
     Locales.en: '''
-[Flutter](http://flutter.dev) is a beautiful technology for building beautiful applications.
+[Flutter]($_linkToFlutter) is an elegant technology for building beautiful applications.
 
-We are a community of people who want Flutter to empower those making this world better, by enabling them to quickly create beautiful web and mobile applications.
+We are a community of people who want Flutter to empower those making this world better,
+by enabling them to quickly create beautiful web and mobile applications.
 
 We welcome:
-* Career explorers, who want to learn and use Flutter
+* Career explorers, who want to learn and use Flutter, online or in classroom
 * Volunteers, who would like to support the explorers in understanding Flutter, online or in classroom
 
 We speak English and Russian and want to extend the list of languages.
@@ -25,10 +29,25 @@ We are located in the US, Redmond WA and want to extend the list of locations.
 
 Required skills: basic English reading.
 
-Join us at Facebook group [Flutter Chat](https://www.facebook.com/groups/676660377543846/) to participate.
+Join us at Facebook group [Flutter Chat]($_linkToGroup) to participate.
 ''',
     Locales.ru: '''
-hi
+[Flutter]($_linkToFlutter) - это элегантная технология для создания красивых приложений.
+
+Мы - группа энтузиастов, хотящих, чтобы Flutter помогал делать мир лучше,
+давая возможность быстро создавать качественные мобильные приложения и веб сайты.
+
+Мы рады:
+* Всем, кто хочет изучить Flutter для карьеры или бизнеса, удаленно или в классе
+* Волонтерам, которые хотели бы помочь в освоении Flutter, удаленно или в классе
+
+Мы говорим на русском и английском и хотели бы расширить список языков.
+
+Мы расположены в US, Redmond WA и хотели бы расширить список местоположений.
+
+Требуемые навыки: базовое чтение на английском.
+
+Присоединяйтесь к нашей Facebook группе [Flutter Chat]($_linkToGroup).
 ''',
   });
 
