@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   flutter:
+    generate: true
     sdk: flutter
   flutter_localizations:
     sdk: flutter
