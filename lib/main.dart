@@ -79,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   child: Markdown(
+                    selectable: true,
                     data: Texts.mainIntro.text[_locale]!,
                     onTapLink: (text, url, title) async {
                       if (url != null) await launchUrl(Uri.parse(url));
