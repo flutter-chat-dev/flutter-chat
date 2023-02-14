@@ -1,7 +1,7 @@
 name: flutter_chat
 description: Flutter Chat
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.1
 
 environment:
   sdk: '>=3.0.0-204.0.dev <4.0.0'
