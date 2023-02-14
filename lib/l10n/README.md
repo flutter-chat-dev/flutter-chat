@@ -1,1 +1,1 @@
-https://docs.flutter.dev/development/accessibility-and-localization/internationalization#introduction-to-localizations-in-flutter
+https://docs.flutter.dev/development/accessibility-and-localization/internationalization#adding-your-own-localized-messages
