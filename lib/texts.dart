@@ -10,6 +10,8 @@ enum Locales {
 
 const _linkToFlutter = "http://flutter.dev";
 const _linkToGroup = "https://www.facebook.com/groups/676660377543846/";
+const _linkToMaterials =
+    "https://docs.google.com/document/d/1EYJ6F3FZCkvUOJ95-Q3u0HBEAONq6tPtlWFUFfdjhqU/edit?usp=sharing";
 
 enum Texts {
   mainIntro({
@@ -30,6 +32,8 @@ We speak English and Russian and want to extend the list of languages.
 We are located in the US, Redmond WA and want to extend the list of locations.
 
 Join us at Facebook group [Flutter Chat]($_linkToGroup) to participate.
+
+[Learning Materials]($_linkToMaterials)
 ''',
     Locales.ru: '''
 [Flutter]($_linkToFlutter) - это элегантная технология для создания красивых приложений.
@@ -46,6 +50,8 @@ Flutter Chat - это группа энтузиастов, хотящих, чт�
 Мы расположены в US, Redmond WA и хотели бы расширить список местоположений.
 
 Присоединяйтесь к нашей Facebook группе [Flutter Chat]($_linkToGroup).
+
+[Учебные материалы]($_linkToMaterials)
 ''',
   });
 
