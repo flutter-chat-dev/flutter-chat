@@ -114,22 +114,22 @@ class HomeContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
-          child: Markdown(
-            selectable: true,
-            data: Texts.mainIntro.text[locale]!,
-            onTapLink: (text, url, title) async {
-              if (url != null) await launchUrl(Uri.parse(url));
-            },
+        SingleChildScrollView(
+          child: SizedBox(
+            height: 330,
+            child: Markdown(
+              selectable: true,
+              data: Texts.mainIntro.text[locale]!,
+              onTapLink: (text, url, title) async {
+                if (url != null) await launchUrl(Uri.parse(url));
+              },
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 20,
         ),
         Expanded(
           child: Align(
             alignment: Alignment.topLeft,
-            child: ElevatedButton(
+            child: OutlinedButton(
               onPressed: () =>
                   launchUrl(Uri.parse(Links.learningMaterials.link)),
               child: Text(Texts.learningMaterials.text[locale]!),
