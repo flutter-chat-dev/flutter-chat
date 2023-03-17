@@ -129,7 +129,7 @@ class HomeContent extends StatelessWidget {
         Expanded(
           child: Align(
             alignment: Alignment.topLeft,
-            child: OutlinedButton(
+            child: ElevatedButton(
               onPressed: () =>
                   launchUrl(Uri.parse(Links.learningMaterials.link)),
               child: Text(Texts.learningMaterials.text[locale]!),
