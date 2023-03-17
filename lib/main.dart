@@ -44,12 +44,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Locales _locale = Locales.en;
+  final _locale = ValueNotifier(Locales.en);
 
   @override
   Widget build(BuildContext context) {
     final titleBgColor = Theme.of(context).colorScheme.inversePrimary;
-    final bgColor = Theme.of(context).colorScheme.background;
 
     return Scaffold(
       appBar: AppBar(
@@ -61,36 +60,83 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(8.0),
           child: SizedBox(
             width: 700,
-            child: Column(
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.topRight,
-                  child: DropdownButton<Locales>(
-                    focusColor: bgColor,
-                    items: Locales.values
-                        .map((l) => DropdownMenuItem(
-                            value: l, child: Text(l.displayName)))
-                        .toList(),
-                    onChanged: (l) => setState(() {
-                      _locale = l!;
-                    }),
-                    value: _locale,
+            child: ValueListenableBuilder(
+              valueListenable: _locale,
+              builder: (_, locale, ___) => Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: LocalePicker(locale: _locale),
                   ),
-                ),
-                Expanded(
-                  child: Markdown(
-                    selectable: true,
-                    data: Texts.mainIntro.text[_locale]!,
-                    onTapLink: (text, url, title) async {
-                      if (url != null) await launchUrl(Uri.parse(url));
-                    },
-                  ),
-                ),
-              ],
+                  Expanded(child: HomeContent(locale)),
+                ],
+              ),
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class LocalePicker extends StatelessWidget {
+  const LocalePicker({super.key, required this.locale});
+
+  final ValueNotifier<Locales> locale;
+
+  @override
+  Widget build(BuildContext context) {
+    final bgColor = Theme.of(context).colorScheme.background;
+    return DropdownButton<Locales>(
+      focusColor: bgColor,
+      items: Locales.values
+          .map(
+            (l) => DropdownMenuItem(
+              value: l,
+              child: Text(l.displayName),
+            ),
+          )
+          .toList(),
+      onChanged: (l) => locale.value = l!,
+      value: locale.value,
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget {
+  const HomeContent(this.locale, {super.key});
+  final Locales locale;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          child: Markdown(
+            selectable: true,
+            data: Texts.mainIntro.text[locale]!,
+            onTapLink: (text, url, title) async {
+              if (url != null) await launchUrl(Uri.parse(url));
+            },
+          ),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Expanded(
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: OutlinedButton(
+              onPressed: () =>
+                  launchUrl(Uri.parse(Links.learningMaterials.link)),
+              child: Text(Texts.learningMaterials.text[locale]!),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
