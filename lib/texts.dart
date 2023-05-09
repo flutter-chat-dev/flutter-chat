@@ -54,7 +54,7 @@ online or in classroom.
 
 **To support us:**
 * **Donate** to [Prime Factor School]($_linkToPrimeFactorDonations) that provides space to us.
-* Spread the word to thouse who may be interested to explore Flutter.
+* Spread the word to those who may be interested to explore Flutter.
 ''',
     Locales.ru: '''
 [Flutter]($_linkToFlutter) - это простая и элегантная технология для создания красивых приложений.
