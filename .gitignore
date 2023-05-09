@@ -45,3 +45,4 @@ app.*.map.json
 
 # Other
 .firebase/hosting.YnVpbGQvd2Vi.cache
+*.lock

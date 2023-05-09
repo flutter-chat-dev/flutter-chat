@@ -116,7 +116,7 @@ class HomeContent extends StatelessWidget {
       children: [
         SingleChildScrollView(
           child: SizedBox(
-            height: 330,
+            height: 440,
             child: Markdown(
               selectable: true,
               data: Texts.mainIntro.text[locale]!,
