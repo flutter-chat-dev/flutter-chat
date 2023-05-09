@@ -35,7 +35,7 @@ enum Texts {
   }),
   mainIntro({
     Locales.en: '''
-[Flutter]($_linkToFlutter) is an elegant technology for building beautiful applications.
+[Flutter]($_linkToFlutter) is a simple and elegant technology for building beautiful applications.
 
 Flutter Chat is a community of people who want Flutter to empower those making this world better,
 by enabling them to quickly create beautiful web and mobile applications.
@@ -57,7 +57,7 @@ online or in classroom.
 * Spread the word to thouse who may be interested to explore Flutter.
 ''',
     Locales.ru: '''
-[Flutter]($_linkToFlutter) - это элегантная технология для создания красивых приложений.
+[Flutter]($_linkToFlutter) - это простая и элегантная технология для создания красивых приложений.
 
 Flutter Chat - это группа энтузиастов, хотящих, чтобы Flutter помогал делать мир лучше,
 давая возможность быстро создавать качественные мобильные приложения и веб сайты.
