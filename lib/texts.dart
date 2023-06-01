@@ -35,9 +35,11 @@ enum Texts {
   }),
   mainIntro({
     Locales.en: '''
+**Flutter Chat** is a Flutter school.
+
 [Flutter]($_linkToFlutter) is a simple and elegant technology for building beautiful applications.
 
-Flutter Chat is a community of people who want Flutter to empower those making this world better,
+We are a community of people who want Flutter to empower those making this world better,
 by enabling them to quickly create beautiful web and mobile applications.
 
 **We welcome:**
@@ -57,6 +59,8 @@ online or in classroom.
 * Spread the word to those who may be interested to exploring Flutter.
 ''',
     Locales.ru: '''
+**Flutter Chat** - это школа Flutter.
+
 [Flutter]($_linkToFlutter) - это простая и элегантная технология для создания красивых приложений.
 
 Flutter Chat - это группа энтузиастов, хотящих, чтобы Flutter помогал делать мир лучше,
